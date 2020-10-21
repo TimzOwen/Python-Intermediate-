@@ -154,3 +154,41 @@ print(new_tuple)
 
 #slicing tuples
 
+#slicing tuples
+#if no start ,starts from 0 and end
+num_tuple = (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16)
+slice_tuple = num_tuple[1:5]
+print(slice_tuple)
+#interval specific
+new_slice = num_tuple[::-1]
+print(new_slice)
+#reverse a tuple
+print(new_slice)
+
+#unpacking a tuple
+coders_Trust = ("Bangladesh",2017,"Mads")
+company, year,ceo = coders_Trust
+print(company)
+print(year)
+print(ceo)
+
+#unpacking in intervals
+num_unpack = (0,1,2,3,4,5,6,7,8,9,10)
+num1, *num, num2 = num_unpack
+print(num1) #first number
+print(num2) #last number
+print(num) #other  numbers now converted into a list
+
+#comparison between list and tuples on system files
+import sys
+list_size = [0,1,2,3,4,5,6,7,8,9,10]
+tuple_size = (0,1,2,3,4,5,6,7,8,9,10)
+print(sys.getsizeof(list_size),bytes) #bigger
+print(sys.getsizeof(tuple_size), bytes)  #smaller
+
+#time taken to create list and tuple comparison
+import timeit
+print(timeit.timeit(stmt="[0,1,2,3,4,5,6,7,8,9,10]",number=1000000)) #longer time to create
+print(timeit.timeit(stmt="(0,1,2,3,4,5,6,7,8,9,10)",number=1000000)) #shorter time to create
+
+#Dictionaries
