@@ -247,3 +247,47 @@ for key,values in dict_.items():
 #copying dict also a change in the copy modifies the parent copy
 copy_dict = dict_
 print(copy_dict)
+
+
+
+my_dict = dict(Name="Timz owen",position="Software Engineer",Experience=5,company="Coderstrust")
+print(my_dict)
+
+copy_dict = my_dict
+print(copy_dict)
+
+copy_dict["Experience"] = 8
+
+print(copy_dict)
+print(my_dict)
+
+#copy with the coy function
+dist_copy = my_dict.copy()
+print(dist_copy)
+
+
+#copy with dict
+copy_copy_dict  = dict(dist_copy)
+print(copy_copy_dict)
+copy_copy_dict["Name"] = "Timz"
+print(copy_copy_dict)
+print(dist_copy)
+
+#merging  or more dictionaries
+dict_1 = {"Name":"Timothy","Age":24,"Country":"Europe"}
+dict_2 = dict(Name="Owen",Role="Instructor",Number=254740354167)
+print(dict_1)
+print(dict_2)
+dict_1.update(dict_2)
+print(dict_1) #{'Name': 'Owen', 'Age': 24, 'Country': 'Europe', 'Role': 'Instructor', 'Number': 254740354167}
+
+#accessing integer values in dictionary
+int_dict = {2:4,5:25,9:81}
+print(int_dict)
+# print(int_dict[0]) #brings a key error, instead use the key number            #### UNCOMMENT TO RUN AND COMMENT OUT AGAIN
+print(int_dict[2])
+
+#using tuples as key values in dictionaries
+my_tuple_dict = (12,18)
+ditc_tuple = {my_tuple_dict: 30}
+print(ditc_tuple)
