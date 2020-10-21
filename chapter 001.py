@@ -94,3 +94,63 @@ print(square_elements)
 
 #UPNEXT_TUPPLES
 
+
+# UP NEXT TUPLES
+#odered an immutable data type collection
+# cannot be changed after its creation
+
+#creating a tuple, parenthesis are optional
+#even with one element, you have to place a comma otherwise it is taken as a string
+myTuple = ("Timz","CodersTrust",2020)
+print(myTuple)
+
+string_nT = ("Apple")
+print(type(string_nT)) #gives a string
+
+string_t = ("Apple",)
+print(type(string_t)) #gives a tuple
+
+#creating a tuple from a list
+list_tuple = tuple(["Timz","Lenovo",2.5])
+print(type(list_tuple))
+print(list_tuple)
+
+#accessing members of a tuple
+# Negative -1 starts from the back
+item = list_tuple[0]
+print(item) #Timz
+
+#change elements
+#they are immutable and you get an error message
+# list_tuple[0] = "James"
+# # object does not support assignment
+
+#iterate through a tuple
+for x in list_tuple:
+    print(x)
+    
+#check if an element is present in a file
+if "timz" in list_tuple:
+    print("yes")
+else:
+    print("No")
+    
+#more methods with tuple
+#len
+my_tuple = ("M","a","c","b","o","o","k")
+print(len(my_tuple))
+#count elements
+print(my_tuple.count("o"))
+#find first index
+print(my_tuple.index("o"))
+#convert to list
+my_list_tuple = list(myTuple)
+print(type(my_list_tuple))
+print(my_list_tuple)
+#convert back to tuple
+new_tuple = tuple(my_list_tuple)
+print(type(new_tuple))
+print(new_tuple)
+
+#slicing tuples
+
