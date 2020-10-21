@@ -192,3 +192,58 @@ print(timeit.timeit(stmt="[0,1,2,3,4,5,6,7,8,9,10]",number=1000000)) #longer tim
 print(timeit.timeit(stmt="(0,1,2,3,4,5,6,7,8,9,10)",number=1000000)) #shorter time to create
 
 #Dictionaries
+#Dictionaries
+#Key-paired Values ,are mutable and are unordered
+
+#create a dictionary
+dict_ = {"city":"Bangladesh", "year":2017,"CEO":"Mads"}
+print(dict_)
+
+#using the dictionary function
+my_new_dict = dict(city="India",started=2018, CEO="Mads")
+print(dict_)
+
+#accesing values
+ceo_name = my_new_dict["CEO"]
+print(ceo_name)
+
+#add values to our dictionary
+my_new_dict["seniority"] = "senior Engineer"
+print(my_new_dict)
+
+#delete elements of a dictionary
+del my_new_dict["city"]
+print(my_new_dict)
+my_new_dict.pop("started")
+print(my_new_dict)
+my_new_dict.popitem() #removes last element
+print(my_new_dict)\
+
+#check is element exists ib a dictionary
+dict_ = {"city":"Bangladesh", "year":2017,"CEO":"Mads"}
+if "city" in dict_:
+    print(dict_["city"])
+else:
+    print("no such Key")
+
+#check with try catch block
+try:
+    print(dict_["year"])
+except:
+    print("ERROR !!! No Key")
+
+#loop through a dictionary using for loop
+for key in dict_:
+    print(key)
+for key in dict_.keys():
+    print(key)
+
+for values in dict_.values():
+    print(values)
+
+for key,values in dict_.items():
+    print(key,values)
+
+#copying dict also a change in the copy modifies the parent copy
+copy_dict = dict_
+print(copy_dict)
