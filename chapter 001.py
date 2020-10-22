@@ -291,3 +291,47 @@ print(int_dict[2])
 my_tuple_dict = (12,18)
 ditc_tuple = {my_tuple_dict: 30}
 print(ditc_tuple)
+
+# UP NEXT SETS
+#collection data type that is unodered, mutable and does not allow duplicate elements
+#instead of duplicate only one of the elements is printed out
+
+#creating a set
+my_set = {12,13,14,15,16,17}
+print(my_set)
+
+#duplicate elements
+my_duplicate = {11,12,13,14,11,15,12,13}
+print(my_duplicate)
+
+#creating using set method
+my_set_list = set([21,22,23,24,25,26,27])
+print(my_set_list)
+
+#string set 
+my_string_set = set("Hello")
+print(my_string_set) #no oder when printing the string and also no char repetition
+
+#create empty set
+set_empty = set()
+print(type(set_empty))
+
+#other set methods
+my_test_set = {2,4,6,8,10}
+
+my_test_set.add(12)
+my_test_set.remove(8) #if no element throws an error
+my_test_set.discard(4) # if no element , nothing hapens
+
+my_test_set.clear() #removes all elements in the set
+
+print(my_test_set)
+
+set_2 = set([1,2,3,4,5,6])
+print(set_2.pop())
+print(set_2)
+
+
+#iterate through the set 
+for s in set_2:
+    print(s)
