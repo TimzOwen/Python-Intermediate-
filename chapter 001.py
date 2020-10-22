@@ -335,3 +335,88 @@ print(set_2)
 #iterate through the set 
 for s in set_2:
     print(s)
+
+    
+
+#check is an element is availble in set 
+if 2 in set_2:
+    print("yes")
+else:
+    print("No")
+
+#Union and intersection
+#union prints elements without duplication
+even_numbers = {0, 2,4,6,8}
+odd_numbers = {1,3,5,7,9,}
+prime_numbers = {2,3,5,7}
+
+union_n = odd_numbers.union(even_numbers)
+print(union_n)
+
+#intersection prints elements with duplicate elements alone
+i = even_numbers.intersection(odd_numbers)
+print(i)
+
+i_o = prime_numbers.intersection(odd_numbers)
+print(i_o)
+
+#differences in sets
+setA = {1,2,3,4,5,6,7,8,9}
+setB = {1,2,3,15,16,17,18,19}
+setC={1,2,3,10,12}
+setD = {1,2,3,45,46,47,48,49,50}
+
+print(setA.difference(setB))
+print(setB.difference(setA))
+
+print(setA.symmetric_difference(setB)) #returns all elements that are in both sets
+
+#add elements from other sets
+setA.update(setB)
+print(setA)
+
+setA.intersection_update(setC)
+print(setA) #prints only elements present in both sets
+
+setC.difference_update(setD)
+print(setA)
+
+setC.symmetric_difference_update(setD)
+print(setC) #prints only the not found in all elements
+
+#subsets in sets
+small_set = {1,2,3,4,5,6,}
+smaller={1,2,3,}
+smallest={7,10}
+print(small_set.issubset(smaller)) #False as not all elements in A and in B
+print(smaller.issubset(small_set)) # True because all the sets in B are in A
+print(small_set.issuperset(smaller))
+print(smaller.issuperset(small_set))
+
+#disjoint - True if there are no similar elements
+print(small_set.isdisjoint(smaller))
+print(smaller.isdisjoint(smallest))
+
+#copying sets
+#changes in the copy changes the original one too
+small_copy = smaller
+print(small_copy)
+
+small_copy.add(4)
+print(small_copy)
+print(smaller)
+
+smallest_copy = smallest.copy() #the copy() does not affect the original set
+smallest_copy.add(12)
+print(smallest_copy)
+print(smallest)
+#or
+smaller_copy = set(smallest) #does not affect the parent set when items are changed
+
+#immutable frozen sets
+fro_set = frozenset([10,12,13,14,15,16])
+print(fro_set)
+
+
+
+#UP NEXT ON STRINGS
