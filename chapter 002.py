@@ -65,3 +65,29 @@ print(my_string7.upper())
 print(my_string7.lower())
 #check if it starts with specific char or words
 print(my_string7.startswith("welcome"))
+
+#ends with
+my_string7 = "welcome to CTA"
+print(my_string7.endswith('A'))
+
+#locating index of a char
+print(my_string7.find('o'))
+
+#string count
+print(my_string7.count('o'))
+
+
+#list and string 
+my_string = "Hello Code ninja"
+print(my_string.split()) #conversts to a list
+#rejoin a string
+
+new_string_now = ' '.join(my_string)
+print(new_string_now)
+my_string8 = ['a'] * 6
+print(my_string8)
+
+new_string = ''
+for x in my_string8:
+    new_string += x
+print(my_string8)
