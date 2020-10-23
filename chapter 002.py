@@ -139,6 +139,21 @@ my_string = f"The user Id for Timz is {my_user_id} and he is an {position}"
 print(my_string)
 
 
-
 # UP NEXT
+
 # COLLECTIONS
+# containers used to store collection of data example, list, dict, set, tuple
+
+# creating containers
+from collections import Counter
+char_abc = "aaabbbccc"
+my_counter = Counter(char_abc)
+print(my_counter)
+print(my_counter.values())
+print(my_counter.keys())
+# most common element
+print(my_counter.most_common(1))
+
+# accessing index of an element
+print(my_counter.keys(1[0[0]])) # indexing to get the element
+print(my_counter.elements())
