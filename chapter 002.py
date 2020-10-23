@@ -91,3 +91,54 @@ new_string = ''
 for x in my_string8:
     new_string += x
 print(my_string8)
+
+
+
+#checking time and speed of string joining
+from timeit import default_timer as timer
+
+my_list = ['b']*1000000
+
+#wrong approach
+start = timer()
+my_string = ''
+for i in my_list:
+    my_string += i
+stop = timer()
+print(stop-start) #0.57553...
+
+#right approach
+start = timer()
+my_string = ''.join(my_list)
+stop = timer()
+print(stop-start) #0.0192...
+
+#formating a string
+#using , modulous ,.formart() and f-String
+
+#formating with %
+my_name = "Timz Owen"
+age = 25
+floating_age = 25.456123
+intro = ("Our instructor's name is %s" %my_name)
+intro_age = (" he is aged %d " %age)
+print(intro)
+print(intro_age)
+print(" He has a floating age of %.2f" %floating_age)
+
+#formating with {}
+my_user_id = 25.3698521
+position = "Engineer"
+my_string = "The user Id for Timz is {:.2f} and he is an {}".format(my_user_id,position)
+print(my_string)
+
+#formating with f-string
+my_user_id = 25.3698521
+position = "Engineer"
+my_string = f"The user Id for Timz is {my_user_id} and he is an {position}"
+print(my_string)
+
+
+
+# UP NEXT
+# COLLECTIONS
