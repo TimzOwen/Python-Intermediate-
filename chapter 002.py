@@ -138,7 +138,6 @@ position = "Engineer"
 my_string = f"The user Id for Timz is {my_user_id} and he is an {position}"
 print(my_string)
 
-
 # UP NEXT
 
 # COLLECTIONS
