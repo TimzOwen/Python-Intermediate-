@@ -156,3 +156,38 @@ print(my_counter.most_common(1))
 # accessing index of an element
 print(my_counter.keys(1[0[0]])) # indexing to get the element
 print(my_counter.elements())
+
+# Named Tuples
+from collections import namedtuple
+
+#creating a namedTuple
+Point = namedtuple('Point','x,y')
+pt = Point(2,6)
+print(pt)
+print(pt.x,pt.y) #access elements
+
+# odered Dictionary
+# a dictionary with oder of items created
+from collections import OrderedDict
+odered_dict = OrderedDict()
+odered_dict['a']=2
+odered_dict['b']=4
+odered_dict['d']=8
+odered_dict['e']=10
+odered_dict['c']=6
+print(odered_dict)
+
+#default dictionary
+#sets a key if no key has been set yet
+from collections import defaultdict
+dic = defaultdict(int) #float can also be used d=0.0
+dic['a']=2
+dic['b']=4
+dic['c']=6
+print(dic)
+print(dic['d']) # assigns a default value of non been assigned
+print(dic['b'])
+
+# deque
+# this is a double ended queue where elements can be added and removed from both sides
+
