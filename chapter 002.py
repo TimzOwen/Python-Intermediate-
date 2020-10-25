@@ -190,4 +190,32 @@ print(dic['b'])
 
 # deque
 # this is a double ended queue where elements can be added and removed from both sides
+# deque
+# this is a double ended queue where elements can be added and removed from both sides
+from collections import deque
+#creating a deque
+deq = deque()
+deq.append(10)
+deq.append(20)
+deq.append(30)
+deq.appendleft(60) #adds element to the left
+print(deq)
+
+deq.pop() #removes last element
+print(deq)
+
+deq.popleft() # removes left most elements
+print(deq)
+
+#clear removes all the elements
+deq.clear()
+print(deq)
+
+# add multiple items same time using a list
+deq.extend([70,80,910])
+print(deq)
+deq.extendleft([12,14,16])
+print(deq)
+print(deq.rotate(12)) #rotates to the right
+print(deq.rotate(-2)) # rotates to the left
 
