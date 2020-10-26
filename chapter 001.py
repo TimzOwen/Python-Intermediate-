@@ -416,7 +416,3 @@ smaller_copy = set(smallest) #does not affect the parent set when items are chan
 #immutable frozen sets
 fro_set = frozenset([10,12,13,14,15,16])
 print(fro_set)
-
-
-
-#UP NEXT ON STRINGS
