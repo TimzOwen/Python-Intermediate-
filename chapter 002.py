@@ -219,3 +219,32 @@ print(deq)
 print(deq.rotate(12)) #rotates to the right
 print(deq.rotate(-2)) # rotates to the left
 
+
+
+# ITERTOOLS
+# used to iterate over data structures in for-loop
+
+# 1.0 the Product
+from itertools import product
+list_1 = [2,4,6,]
+list_2 = [8,10,12]
+prod = product(list_1, list_2)
+print(list(prod)) # combines all the elements in both list
+# [(2, 8), (2, 10), (2, 12), (4, 8), (4, 10), (4, 12), (6, 8), (6, 10), (6, 12)]
+# can also define the number of repetition
+prod=product(list_1, list_2, repeat=2) # repeat prints repeated values
+print(list(prod))
+
+
+# 2.0 permutation
+# returns all possible oderings of input elements
+from itertools import permutations
+numbers = [2,4,6,8]
+perm = permutations(numbers)
+print(list(perm))
+
+# 3.0 combination
+from itertools import combinations
+combi = [1,2,3,4,5]
+posible_combination = combinations(combi,2)
+print(list(posible_combination))
