@@ -248,3 +248,33 @@ from itertools import combinations
 combi = [1,2,3,4,5]
 posible_combination = combinations(combi,2)
 print(list(posible_combination))
+
+
+# ITERTOOLS
+# used to iterate over data structures in for-loop
+
+
+# 4.0
+# Accumulated Function, returns sum of the elements
+from itertools import accumulate
+num = [2,4,6,8]
+acc = accumulate(num)
+print(num)
+print(list(acc))
+
+# multiply
+from itertools import accumulate
+import operator
+num1 = [2,4,6,8]
+acc = accumulate(num1, func=operator.mul)
+print(num1)
+print(list(acc))
+
+# return Max
+from itertools import accumulate
+import operator
+num1 = [2,4,10,6,8]
+acc = accumulate(num1, func=max)
+print(num1)
+print(list(acc))
+
