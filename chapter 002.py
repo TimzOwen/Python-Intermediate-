@@ -278,3 +278,88 @@ acc = accumulate(num1, func=max)
 print(num1)
 print(list(acc))
 
+
+import itertools count, cycle, repeat
+# ITERTOOLS
+# used to iterate over data structures in for-loop
+
+# 5.0
+# GroupBy
+# returns keys and values
+
+from itertools import groupby
+#define a method to be used
+def test_g_s(y):
+    return y<6
+
+list_g = [2,4,6,8]
+
+g_elements  = groupby(list_g,key=test_g_s)
+#iterate through the elements
+for key,value in g_elements:
+    print(key,list(value))
+
+
+# using lambda
+def test_g_s(y):
+    return y<6
+
+list_g = [2,4,6,8]
+
+g_elements  = groupby(list_g,key=lambda x: x<6)
+#iterate through the elements
+for key,value in g_elements:
+    print(key,list(value))
+
+
+
+
+# using lambda
+
+from itertools import groupby
+#define a method to be used
+def test_g_s(y):
+    return y<6
+
+list_g = [2,4,6,8]
+
+g_elements  = groupby(list_g,key=test_g_s)
+#iterate through the elements
+for key,value in g_elements:
+    print(key,list(value))
+
+
+# example
+persons = [{'name':'Tim', 'age':25},{'name':'Timz', 'age':35},{'name':'Timo', 'age':25},
+          {'name':'Timothy', 'age':28}]
+
+g_elements  = groupby(persons, key=lambda x:x['age'])
+#iterate through the elements
+for key,value in g_elements:
+    print(key, list(value))
+    
+    
+# 6.0 infinite iterators
+
+
+#count
+# counts by adding 1 at each step interger
+for i in count(15):
+    print(i)
+    if i ==100:
+        break
+    
+#cycle , loops infinately through a list
+num_list = [2,4,6]
+for x in cycle(num_list):
+    print(x)
+    
+
+# repeat, prints  over repeating times in a value
+num_list = [2,4,6]
+for x in repeat(2,10):
+    print(x)
+    
+    
+    
+
