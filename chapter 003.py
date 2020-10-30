@@ -352,6 +352,95 @@ with open('laptops.json', 'r') as file:
     lapi = json.load(file)
     print(lapi)
 
+    
+# Encoding fro, a class
+
+import json
+
+class User:
+    def __init__(self, name, experience):
+        self.name = name
+        self.experience = experience
+
+user = User('Timz',5)
+
+userJSON = json.dumps(user) # throws an error Object of type User is not JSON serializable
+
+#soln , create a custom encoding function 
+
+# Encoding fro, a class
+
+import json
+
+class User:
+    def __init__(self, name, experience):
+        self.name = name
+        self.experience = experience
+
+user = User('Timz',5)
+
+def encode_user_data(o):
+    if isinstance(o, User):
+        return {'name': o.name, 'experience': o.experience, o.__class__.__name__: True}
+    else:
+        raise TypeError('Object of type User is not JSON serializable')
+
+userJSON = json.dumps(user, default=encode_user_data)
+print(userJSON)
+
+
+
+# alternative
+# Encoding fro, a class
+
+import json
+
+class User:
+    def __init__(self, name, experience):
+        self.name = name
+        self.experience = experience
+
+user = User('Timz',5)
+
+def encode_user_data(o):
+    if isinstance(o, User):
+        return {'name': o.name, 'experience': o.experience, o.__class__.__name__: True}
+    else:
+        raise TypeError('Object of type User is not JSON serializable')
+
+userJSON = json.dumps(user, default=encode_user_data)
+print(userJSON)
+
+
+# alt 3
+# Encoding fro, a class
+
+import json
+
+class User:
+    def __init__(self, name, experience):
+        self.name = name
+        self.experience = experience
+
+user = User('Timz',5)
+
+def encode_user_data(o):
+    if isinstance(o, User):
+        return {'name': o.name, 'experience': o.experience, o.__class__.__name__: True}
+    else:
+        raise TypeError('Object of type User is not JSON serializable')
+
+#using json encoder
+from json import JSONEncoder
+class UserEncoder(JSONEncoder):
+    def deafult_encoder(self,o):
+        if isinstance(o, User):
+            return {'name': o.name, 'experience': o.experience, o.__class__.__name__: True}
+        return JSONEncoder.default(self,o)
+
+userJSON = UserEncoder().deafult_encoder(user)
+print(userJSON)
+
 
 
 
