@@ -204,10 +204,154 @@ logger.debug('debug message')
 
 
 
+# Dealing with structraces in python
+import logging 
+#lisr out of range
+
+try:
+    list_range = [1,2,3,4,5]
+    b = list_range[6]
+except IndexError as e:
+    logging.error(e)    # out of range
+
+
+# get the exact error and value causing error
+try:
+    list_range = [1,2,3,4,5]
+    b = list_range[6]
+except IndexError as e:
+    logging.error(e, exc_info=True)    # out of range
+    
+    
+# Not sure of the exact type of error
+import logging
+import traceback
+#lisr out of range
+
+try:
+    list_range = [1,2,3,4,5]
+    b = list_range[6]
+except IndexError as e:
+    logging.error("Error is %s", traceback.format_exc())
 
 
 
+# Rotating file handlers
+# allows you to keep track of most recent errors where files are large
+
+import logging
+from logging.handlers import RotatingFileHandler
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+# roll over to next files once we are at 3kb per file and keep recording log errors
+handler = RotatingFileHandler('app.log', maxBytes=3000, backupCount=6)
+logger.addHandler(handler)
+
+for _ in range(15000):
+    logger.info('Error code on line 123 of 12') # creates files in the folder ith debug info each with 3kb memory space
+    
+# TimeRotating log File
+# keeps record if the app is being logged after some time
+
+import logging
+import time
+from logging.handlers import TimedRotatingFileHandler
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+# roll over to next files once we are at 3kb per file and keep recording log errors
+handler = TimedRotatingFileHandler('timed_app.log', when='s',interval=10, backupCount=6)
+logger.addHandler(handler)
+
+for _ in range(15000):
+    logger.info('Error code on line 123 of 12')
+    time.sleep(5)
+    
+    
+  JSON IN PYTHON
+
+# JavaScript object Notation
+# encoding dic to JSON
+
+import json
+
+laptop_status = {"brand":"Toshiba", "operation":2, "company":"Samsung","hasGPU":False,"Tasks":["Code","Gaming"]}
+
+laptop_json = json.dumps(laptop_status, indent=4)
+print(laptop_json)
+      
+{
+    "brand": "Toshiba",
+    "operation": 2,
+    "company": "Samsung",
+    "hasGPU": false,
+    "Tasks": [
+        "Code",
+        "Gaming"
+    ]
+}
+
+# print sorted keys
+laptop_json = json.dumps(laptop_status, indent=4, sort_keys=True)
+print(laptop_json)
+
+{
+    "Tasks": [
+        "Code",
+        "Gaming"
+    ],
+    "brand": "Toshiba",
+    "company": "Samsung",
+    "hasGPU": false,
+    "operation": 2
+}
 
 
- 
+
+# export to File 
+# encoding dic to JSON
+
+import json
+
+laptop_status = {"brand":"Toshiba", "operation":2, "company":"Samsung","hasGPU":False,"Tasks":["Code","Gaming"]}
+
+
+#create and dump to a new file
+with open('laptops.json','w') as file:
+    json.dump(laptop_status, fil,indent=4)
+# creates a file with the json data inside it
+
+
+
+# encoding dic to JSON
+
+import json
+
+#Decerealization back to dictionary from json
+
+laptop_status = {"brand":"Toshiba", "operation":2, "company":"Samsung","hasGPU":False,"Tasks":["Code","Gaming"]}
+
+laptopJSON = json.dumps(laptop_status, indent=4)
+
+laptop = json.loads(laptopJSON)
+print(laptop)
+
+
+# decoding from a json file to a dict file
+#Decerealization back to dictionary from json
+
+laptop_status = {"brand":"Toshiba", "operation":2, "company":"Samsung","hasGPU":False,"Tasks":["Code","Gaming"]}
+
+laptopJSON = json.dumps(laptop_status, indent=4)
+
+# decode into a file from json file
+with open('laptops.json', 'r') as file:
+    lapi = json.load(file)
+    print(lapi)
+
+
+
 
