@@ -135,5 +135,65 @@ except TrafficToLow as e:
     
     
     
+# LOGGING
+# log levels in python
+# Debug, info, warning,error, critical
+
+import logging
+
+logging.error('error messsage')
+logging.debug('Debugging message')
+logging.warning('warning message')
+logging.critical("critical message")
+logging.info('info message')
+
+
+# LOGGING
+# log levels in python
+# Debug, info, warning,error, critical
+
+import logging
+
+# basic configuration
+# check on documentation--->logging.basicConfig on python.org
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    datefmt='%m/%d/%y %H:%M:%S')
+
+logging.error('error messsage')
+logging.debug('Debugging message')
+logging.warning('warning message')
+logging.critical("critical message")
+logging.info('info message')
+
+# Desired Output
+10/30/20 11:04:24 - root - ERROR - error messsage
+10/30/20 11:04:24 - root - DEBUG - Debugging message
+10/30/20 11:04:24 - root - WARNING - warning message
+10/30/20 11:04:24 - root - CRITICAL - critical message
+10/30/20 11:04:24 - root - INFO - info message
+
+
+
+
+
+# Logging not from the Root
+# basic configuration
+#check on documentation--->logging.basicConfig on python.org
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    datefmt='%m/%d/%y %H:%M:%S')
+
+#creating your own logger module
+# create a different file and name it logger module where you will import to the mail file.
+# avoid using the root
+
+import loggerModule
+
+
+
+
+
+
  
 
