@@ -475,4 +475,26 @@ print(a_3_3) # 3x3 array radnom numbers
  [0.24500343 0.37950246 0.13828196]]
 
 
+# print in range and in 3 elements
+random_a = np.random.randint(0,10 , 3)
+print(random_a)
+
+# higher dimentions array
+high_d_a = np.random.randint(0,10,(4,4))
+print(high_d_a) # 4x4 using a tuple
+
+
+
+
+#shuffling with random  arrays along the x axis only
+array_shuffle = np.array([[123],[456],[789]])
+print(array_shuffle)
+np.random.shuffle(array_shuffle)
+print(array_shuffle)
+[[123]
+ [456]
+ [789]]
+[[123]
+ [789]
+ [456]]
 
