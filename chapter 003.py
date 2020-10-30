@@ -444,3 +444,35 @@ print(userJSON)
 
 
 
+# using Secrets as opposed to seed
+# useful in hashing, account verification and passwords
+import secrets
+
+# randbelow (no upper bound inclussion)
+random_below = secrets.randbelow(20)
+print(random_below)
+
+# radom bits
+random_bits = secrets.randbits(4) # max = 15
+print(random_bits)
+
+# Secret choice
+my_list = list("QWERTYkeyboard")
+random_secret = secrets.choice(my_list)
+print(random_secret)
+
+
+# numpy random
+import numpy as np
+
+a = np.random.rand(2) # generates 2 D array of random numbers
+print(a)
+
+a_3_3 = np.random.rand(3,3)
+print(a_3_3) # 3x3 array radnom numbers 
+[[0.30797228 0.52369223 0.36657788]
+ [0.61926565 0.38223273 0.65568609]
+ [0.24500343 0.37950246 0.13828196]]
+
+
+
