@@ -191,6 +191,20 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(leve
 import loggerModule
 
 
+# use the config file on the files in the code to import
+
+import logging
+import logging.config
+# file configuration
+
+logging.config.fileConfig('logging.conf')
+
+logger = logging.getLogger('simpleExample')
+logger.debug('debug message')
+
+
+
+
 
 
 
