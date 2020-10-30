@@ -360,6 +360,59 @@ num_list = [2,4,6]
 for x in repeat(2,10):
     print(x)
     
-    
+# LAMBDA
+# the shortened function
+multiplication = lambda i: i*12
+print(multiplication(12))
+
+# same as
+def mult(x):
+    return x * 12
+print(mult(12))
+
+# more than one arguement
+addition = lambda x,y,z: x+y+z
+print(addition(2,4,6))
+
+#sorting with lambda
+# random_2D = [(2,4),(-2,8),(12,11)(9,-8)]
+# sorted_random = sorted(random_2D)
+# print(list(sorted_random))
+# print(random_2D)
+
+#sort with lambda key
+# random_2D = [(2,4),(-2,8),(12,11)(9,-8)]
+# sorted_random = sorted(random_2D, key=lambda :x[1])
+# print(list(sorted_random))
+# print(random_2D)
+
+# map Function
+# used for transformation (fun-argu, sequence )
+list_a = [2,4,6,8]
+list_b_multiplied = map(lambda z: z*2, list_a)
+print(list(list_b_multiplied))
+
+#or use list comprehension
+double_num = [x*2 for x in list_a]
+print(double_num)
+
+# Filter Function
+# cal even numbers using the filter function
+list_even = [1,2,3,4,5,6,7,8,9,10]
+filter_even = filter(lambda x: x%2==0,list_even)
+print(list(filter_even))
+
+# using list comprehension to calculate even
+list_even_2 = [i for i in list_even if i%2==0]
+print(list(list_even_2))
+
+#Reduce Function
+# calculates sum of a given condition
+from functools import reduce
+list_a = [2,4,6]
+product_sum = reduce(lambda x,y: x*y, list_a)
+print(product_sum)
+
+ 
     
 
