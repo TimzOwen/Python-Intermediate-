@@ -128,3 +128,23 @@ def command(team):
 command('H')
 
 
+
+# Class Decorators
+# Helps in keeping track of decorators after they have been executed
+
+class CountCalls:
+    def __init__(self, func):
+        self.func = func
+        self.number_of_times_called = 0
+    def __call__(self, *args, **kwargs):
+        self.number_of_times_called += 1
+        print(f'Executed {self.number_of_times_called} times')
+        return self.func(*args, **kwargs)
+
+@CountCalls
+def morning_greeting():
+    print('Good Morning Google')
+morning_greeting()
+morning_greeting()
+morning_greeting()
+
