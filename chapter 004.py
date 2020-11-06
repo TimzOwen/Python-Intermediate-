@@ -151,6 +151,161 @@ morning_greeting()
 
 
 
+   
+
+
+# UP NEXT ON GENERATORS
+
+
+# Used to create iterators
+# functions that return iterable items/elements one at a time
+# uses yield instead of generators
+
+def myCountGenerators():
+    yield 10
+    yield 20
+    yield 30
+    yield 40
+my_g = myCountGenerators()
+print(my_g) # <generator object myCountGenerators at 0x000001F3C66FBAC0>
+#loop through to check the items
+# for x in my_g:
+#     print(x)
+
+# get the items one by one
+value_n = next(my_g)
+print(value_n)
+
+# calculate sum of yield
+print(sum(my_g))
+
+#print sorted gen
+def myIntGenerators():
+    yield 70
+    yield 20
+    yield 15
+    yield 40
+my_s_g = myIntGenerators()
+print(sorted(my_s_g)) # sorts the elements
+
+
+# count down while loops
+def countingDown(startingNo):
+    print('starting at {}', startingNo)
+    while startingNo > 0:
+        yield startingNo
+        startingNo-=1
+countDown = countingDown(5)
+print(next(countDown))
+print(next(countDown))
+print(next(countDown))
+print(next(countDown))
+print(next(countDown))
+# print(next(countDown))  # printing this throws a stop iteration ERROR
+
+# working with large data
+import sys
+
+def appendingN(num):
+    my_list = []
+    start_n = 0
+    while start_n<num:
+        my_list.append(num)
+        num +=1
+    return my_list
+print(appendingN(15))
+print(sum(appendingN(10)))
+
+
+# using generators instead of List to save on space
+def appendWithGenerators(n):
+    num = 0
+    while num<n:
+        yield num
+        num +=1
+print(sum(firstn(10)))
+print(sum(appendingWithGenerators(10))
+
+#check size
+print(sys.getsizeof(appendingN((10)))
+print(sys.getsizeof(appendWithGenerators(10)))
+
+
+
+# GENERATORS SAMPLE 2
+# using fobonacii series
+
+def fibonacci(max_limit):
+    # 0,1
+    a,b = 0,1
+    while a < max_limit:
+        yield a
+        a,b = b, a + b
+fib  = fibonacci(30)
+for i in fibonacci:
+    print(i)
+
+
+
+# Generator Expression:
+# even numbers with for loop 
+# simlified loopig of the commands in the for loop and saves on the spaces 
+# almost similar to the list comprehension
+myGenerator = (i for i in range(20) if i % 2 ==0)
+for x in myGenerator:
+    print(x)
+   
+# you can convert it to a list using the list
+print(list(myGenerator))   
+   
+# list comprehension
+
+myListComprehension = [x for x in range(10) if i % 3 == 0]
+for i in myListComprehension:
+    print(i)
+
+
+# calculate the siz of a the list for the comparison
+
+
+
+
+
+# THREADING VS MULTUPROCESSING
+# running your code and making it fast
+
+import sys
+
+myListComprehension = [x for x in range(10) if i % 3 == 0]
+for i in myListComprehension:
+    print(sys.getsizeof(myListComprehension))
+
+myGenerator = (i for i in range(20) if i % 2 ==0)
+for x in myGenerator:
+    print(sys.getsizeof(myCountGenerators))
+
+
+
+# using generators instead of List to save on space
+def appendingN(num):
+    my_list = []
+    start_n = 0
+    while start_n<num:
+        my_list.append(num)
+        num +=1
+    return my_list
+
+def appendingWithGenerators(n):
+    num = 0
+    while num < n:
+        yield num
+        num += 1
+print(sum(appendingWithGenerators(5)))
+print(sum(appendingN(5)))
+
+
+
+
 
 Threading vs Multithreading
 allows you to run your code in paralel and speed up your code
@@ -400,154 +555,4 @@ if __name__ == "__main__":
     
     
     
-    
-
-
-# UP NEXT ON GENERATORS
-
-
-# Used to create iterators
-# functions that return iterable items/elements one at a time
-# uses yield instead of generators
-
-def myCountGenerators():
-    yield 10
-    yield 20
-    yield 30
-    yield 40
-my_g = myCountGenerators()
-print(my_g) # <generator object myCountGenerators at 0x000001F3C66FBAC0>
-#loop through to check the items
-# for x in my_g:
-#     print(x)
-
-# get the items one by one
-value_n = next(my_g)
-print(value_n)
-
-# calculate sum of yield
-print(sum(my_g))
-
-#print sorted gen
-def myIntGenerators():
-    yield 70
-    yield 20
-    yield 15
-    yield 40
-my_s_g = myIntGenerators()
-print(sorted(my_s_g)) # sorts the elements
-
-
-# count down while loops
-def countingDown(startingNo):
-    print('starting at {}', startingNo)
-    while startingNo > 0:
-        yield startingNo
-        startingNo-=1
-countDown = countingDown(5)
-print(next(countDown))
-print(next(countDown))
-print(next(countDown))
-print(next(countDown))
-print(next(countDown))
-# print(next(countDown))  # printing this throws a stop iteration ERROR
-
-# working with large data
-import sys
-
-def appendingN(num):
-    my_list = []
-    start_n = 0
-    while start_n<num:
-        my_list.append(num)
-        num +=1
-    return my_list
-print(appendingN(15))
-print(sum(appendingN(10)))
-
-
-# using generators instead of List to save on space
-def appendWithGenerators(n):
-    num = 0
-    while num<n:
-        yield num
-        num +=1
-print(sum(firstn(10)))
-print(sum(appendingWithGenerators(10))
-
-#check size
-print(sys.getsizeof(appendingN((10)))
-print(sys.getsizeof(appendWithGenerators(10)))
-
-
-
-# GENERATORS SAMPLE 2
-# using fobonacii series
-
-def fibonacci(max_limit):
-    # 0,1
-    a,b = 0,1
-    while a < max_limit:
-        yield a
-        a,b = b, a + b
-fib  = fibonacci(30)
-for i in fibonacci:
-    print(i)
-
-
-
-# Generator Expression:
-# even numbers with for loop 
-# simlified loopig of the commands in the for loop and saves on the spaces 
-# almost similar to the list comprehension
-myGenerator = (i for i in range(20) if i % 2 ==0)
-for x in myGenerator:
-    print(x)
-   
-# you can convert it to a list using the list
-print(list(myGenerator))   
-   
-# list comprehension
-
-myListComprehension = [x for x in range(10) if i % 3 == 0]
-for i in myListComprehension:
-    print(i)
-
-
-# calculate the siz of a the list for the comparison
-
-
-
-
-
-# THREADING VS MULTUPROCESSING
-# running your code and making it fast
-
-import sys
-
-myListComprehension = [x for x in range(10) if i % 3 == 0]
-for i in myListComprehension:
-    print(sys.getsizeof(myListComprehension))
-
-myGenerator = (i for i in range(20) if i % 2 ==0)
-for x in myGenerator:
-    print(sys.getsizeof(myCountGenerators))
-
-
-
-# using generators instead of List to save on space
-def appendingN(num):
-    my_list = []
-    start_n = 0
-    while start_n<num:
-        my_list.append(num)
-        num +=1
-    return my_list
-
-def appendingWithGenerators(n):
-    num = 0
-    while num < n:
-        yield num
-        num += 1
-print(sum(appendingWithGenerators(5)))
-print(sum(appendingN(5)))
+ 
