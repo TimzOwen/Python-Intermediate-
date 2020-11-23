@@ -421,3 +421,13 @@ lock.release()
 
 with lock:
     #code and release automatically
+      
+      
+# Files with json and CSV
+import json
+import csv
+
+with open('comaseparatedvalues.txt.txt', 'r') as file:
+    reader = csv.reader(file)
+    for rows in reader:
+        print(rows)
